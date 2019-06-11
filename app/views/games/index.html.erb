@@ -1,0 +1,13 @@
+<h1>Games</h1>
+
+<h4>Search for Favorite Game</h4>
+  <%=form_tag(games_path, method: :get) do %>
+    <%= text_field_tag(:search, params[:search]) %>
+    <%= submit_tag "Search" %>
+  <% end %>
+
+<ul>
+  <% @games.each do |game| %>
+    <li><%=link_to game.title, game_path(game) %></li>
+<% end %>
+</ul>

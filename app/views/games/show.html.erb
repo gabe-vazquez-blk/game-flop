@@ -1,0 +1,12 @@
+<h1><%= "#{@game.title}" %></h1>
+
+<p>
+Maturity Rating: <%= "#{@game.maturity_rating}" %>
+<br>
+Price: <%= "#{@game.price}" %>
+<br>
+Genre: <%= "#{@game.genre}" %>
+<br>
+Console: <%= link_to  @game.console.name, console_path(@game.console) %>
+</p>
+<%= button_to 'delete', {:controller => :games , :action => 'destroy', :id => @game.id }, :method => :delete %>
